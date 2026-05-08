@@ -127,11 +127,6 @@ void MainWindow::initButtons()
 void MainWindow::onStartGame()
 {
     GameWindow *gameWindow = new GameWindow();
-    connect(gameWindow, &GameWindow::returnToHome, [=]() {
-        gameWindow->close();
-        gameWindow->deleteLater();
-        this->show();
-    });
     gameWindow->show();
     this->hide();
 }

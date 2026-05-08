@@ -125,7 +125,7 @@ void GameWindow::startGame()
     jiyi = new QLabel(this);
     QPixmap jiyiPixmap("jiyi.png");
     if (!jiyiPixmap.isNull()) {
-        jiyi->setPixmap(jiyiPixmap.scaled(100, 120, Qt::KeepAspectRatio, Qt::SmoothTransformation)));
+        jiyi->setPixmap(jiyiPixmap.scaled(100, 120, Qt::KeepAspectRatio, Qt::SmoothTransformation));
     } else {
         jiyi->setText("🐱");
         jiyi->setStyleSheet("font-size: 100px;");
@@ -167,7 +167,7 @@ void GameWindow::dropRiceBall()
     QLabel *riceBall = new QLabel(this);
     QPixmap pixmap("fantuan.png");
     if (!pixmap.isNull()) {
-        riceBall->setPixmap(pixmap.scaled(60, 60, Qt::KeepAspectRatio, Qt::SmoothTransformation)));
+        riceBall->setPixmap(pixmap.scaled(60, 60, Qt::KeepAspectRatio, Qt::SmoothTransformation));
     } else {
         riceBall->setText("🍙");
         riceBall->setStyleSheet("font-size: 40px;");
@@ -277,7 +277,7 @@ void GameWindow::showPauseDialog()
     
     connect(exitBtn, &QPushButton::clicked, [=]() {
         pauseDialog->close();
-        emit returnToHome();
+        this->close();
     });
     
     pauseDialog->exec();
@@ -477,7 +477,7 @@ void GameWindow::showGameOverDialog()
     
     connect(exitBtn, &QPushButton::clicked, [=]() {
         gameOverDialog->close();
-        emit returnToHome();
+        this->close();
     });
     
     gameOverDialog->exec();
