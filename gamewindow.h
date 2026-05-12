@@ -11,6 +11,9 @@ class GameWindow : public QMainWindow
 {
     Q_OBJECT
 
+signals:
+    void returnToHome();
+
 public:
     explicit GameWindow(QWidget *parent = nullptr);
     ~GameWindow() override;
